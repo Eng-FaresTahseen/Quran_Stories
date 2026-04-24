@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قصص القرآن الكريم | هدى ورحمة</title>
+    <meta name="description" content="تصفح قصص الأنبياء والحيوانات في القرآن الكريم بتجربة بصرية وسمعية مميزة.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <!-- Background Pattern -->
+    <div class="islamic-pattern"></div>
+
+    <!-- Home View -->
+    <main id="home-view" class="view active">
+        <header class="hero">
+            <h1 class="glow-text">قصص القرآن الكريم</h1>
+            <p>وَكُلًّا نَّقُصُّ عَلَيْكَ مِنْ أَنبَاءِ الرُّسُلِ مَا نُثَبِّتُ بِهِ فُؤَادَكَ</p>
+        </header>
+
+        <section class="categories">
+            <div class="category-card" onclick="openStory('musa')">
+                <div class="card-image moses-bg"
+                    style="background-image: url('assets/images/moses_basket_nile_1776768826662.png');"></div>
+                <div class="card-content">
+                    <h2>قصة نبي الله موسى</h2>
+                    <p>انشقاق البحر ونجاة بني إسرائيل</p>
+                    <button class="gold-btn">اقرأ القصة</button>
+                </div>
+            </div>
+
+            <div class="category-card" onclick="openStory('yunus')">
+                <div class="card-image yunus-bg"
+                    style="background-image: url('assets/images/yunus_whale_deep_1776787088546.png');"></div>
+                <div class="card-content">
+                    <h2>قصة نبي الله يونس</h2>
+                    <p>دعاء في ظلمات البحر وبطن الحوت</p>
+                    <button class="gold-btn">اقرأ القصة</button>
+                </div>
+            </div>
+
+            <div class="category-card" onclick="openStory('sulaiman_ant')">
+                <div class="card-image sulaiman-bg"
+                    style="background-image: url('assets/images/sulaiman_army_1776866948529.png');"></div>
+                <div class="card-content">
+                    <h2>قصة سليمان والنملة</h2>
+                    <p>رحمة النبي وشكره لنعم الله</p>
+                    <button class="gold-btn">اقرأ القصة</button>
+                </div>
+            </div>
+
+            <div class="category-card" onclick="openStory('elephant')">
+                <div class="card-image elephant-bg"
+                    style="background-image: url('assets/images/elephant_army_1776870295825.png');"></div>
+                <div class="card-content">
+                    <h2>قصة أصحاب الفيل</h2>
+                    <p>حماية البيت العتيق من أبرهة</p>
+                    <button class="gold-btn">اقرأ القصة</button>
+                </div>
+            </div>
+
+            <div class="category-card" onclick="openStory('cave')">
+                <div class="card-image cave-bg" style="background-image: url(assets/images/cave_1.png);"></div>
+                <div class="card-content">
+                    <h2>قصة أصحاب الكهف</h2>
+                    <p>فتية آمنوا بربهم وزادهم هدى</p>
+                    <button class="gold-btn">اقرأ القصة</button>
+                </div>
+            </div>
+
+            <div class="category-card" onclick="openStory('yusuf')">
+                <div class="card-image yusuf-bg"
+                    style="background-image: url('https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=800&q=80');">
+                </div>
+                <div class="card-content">
+                    <h2>قصة يوسف الصديق</h2>
+                    <p>من غيابة الجب إلى خزائن الأرض</p>
+                    <button class="gold-btn">اقرأ القصة</button>
+                </div>
+            </div>
+
+            <div class="category-card" onclick="openStory('nuh')">
+                <div class="card-image nuh-bg"
+                    style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80');">
+                </div>
+                <div class="card-content">
+                    <h2>قصة نوح والطوفان</h2>
+                    <p>سفينة النجاة وأمواج كالجبال</p>
+                    <button class="gold-btn">اقرأ القصة</button>
+                </div>
+            </div>
+
+            <div class="category-card" onclick="openStory('ibrahim')">
+                <div class="card-image ibrahim-bg"
+                    style="background-image: url('https://images.unsplash.com/photo-1548407260-da850faa41e3?w=800&q=80');">
+                </div>
+                <div class="card-content">
+                    <h2>قصة إبراهيم الخليل</h2>
+                    <p>النار برداً وسلاماً وبناء الكعبة</p>
+                    <button class="gold-btn">اقرأ القصة</button>
+                </div>
+            </div>
+
+            <div class="category-card" onclick="openStory('maryam')">
+                <div class="card-image maryam-bg"
+                    style="background-image: url('https://images.unsplash.com/photo-1564769662533-4f00a87b4056?w=800&q=80');">
+                </div>
+                <div class="card-content">
+                    <h2>قصة السيدة مريم</h2>
+                    <p>معجزة الميلاد ونطق الرضيع</p>
+                    <button class="gold-btn">اقرأ القصة</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Story Viewer -->
+    <section id="story-view" class="view hidden">
+        <button class="close-btn" onclick="closeStory()">&times; عودة</button>
+
+        <div class="slider-container">
+            <div id="slide-image" class="slide-image"></div>
+
+            <div class="slide-content">
+                <p id="slide-text" class="slide-text"></p>
+                <div class="controls">
+                    <button id="prev-btn" class="nav-btn hidden" onclick="prevSlide()">السابق</button>
+                    <button id="next-btn" class="nav-btn gold-btn" onclick="nextSlide()">التالي</button>
+                </div>
+                <div class="progress-dots" id="dots-container"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Verses & Audio Viewer (Shown at end of story) -->
+    <section id="verses-view" class="view hidden">
+        <button class="close-btn" onclick="closeStory()">&times; عودة</button>
+
+        <div class="verses-container">
+            <h2 class="surah-title">سورة الشعراء</h2>
+
+            <div class="quran-text" id="quran-text">
+                <!-- Text populated by JS -->
+            </div>
+
+            <div class="audio-player">
+                <div class="player-info">
+                    <span class="reciter">القارئ: محمد صديق المنشاوي</span>
+                    <span id="current-verse-info">الآية 63</span>
+                </div>
+                <div class="player-controls">
+                    <button id="play-pause-btn" class="play-btn" onclick="togglePlay()">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                            <path d="M8 5v14l11-7z" id="play-icon" />
+                            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" id="pause-icon" style="display:none;" />
+                        </svg>
+                    </button>
+                </div>
+                <audio id="quran-audio" preload="auto"></audio>
+            </div>
+            <button class="gold-btn reset-btn" onclick="openStory(currentStory.id)">إعادة القصة</button>
+        </div>
+    </section>
+
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,345 @@
+:root {
+    --bg-color: #0c0c0c;
+    --card-bg: #161616;
+    --gold: #d4af37;
+    --gold-dim: #9c8024;
+    --text-primary: #f8f5eb;
+    --text-secondary: #a3a3a3;
+    
+    --font-heading: 'Amiri', serif;
+    --font-body: 'Tajawal', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+}
+
+/* Islamic Pattern Background */
+.islamic-pattern {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.03;
+    z-index: -1;
+    pointer-events: none;
+    background-image: url('data:image/svg+xml;utf8,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23d4af37" fill-opacity="1"><path d="M30 30L15 15l4.243-4.243L30 21.515l10.757-10.758L45 15 30 30zM30 30L45 45l-4.243 4.243L30 38.485 19.243 49.242 15 45 30 30zM15 15L0 30l15 15V15zM45 15l15 15-15 15V15z"/></g></g></svg>');
+}
+
+/* View Control */
+.view {
+    min-height: 100vh;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease;
+    padding: 2rem;
+}
+
+.view.hidden {
+    display: none;
+    opacity: 0;
+}
+
+.view.active {
+    display: block;
+    opacity: 1;
+    animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Buttons */
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.gold-btn {
+    background: linear-gradient(45deg, var(--gold-dim), var(--gold));
+    color: var(--bg-color);
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+}
+
+.gold-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+}
+
+.disable-btn {
+    background: #333;
+    color: #888;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    cursor: not-allowed;
+}
+
+.close-btn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: rgba(0,0,0,0.5);
+    color: var(--text-primary);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: 1px solid var(--gold);
+    z-index: 100;
+    backdrop-filter: blur(5px);
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    margin: 4rem 0;
+}
+
+.hero h1 {
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.glow-text {
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+}
+
+.hero p {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--text-secondary);
+}
+
+/* Cards */
+.categories {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.category-card {
+    background: var(--card-bg);
+    border: 1px solid #333;
+    border-radius: 15px;
+    overflow: hidden;
+    width: 350px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+}
+
+.category-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--gold);
+}
+
+.card-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.moses-bg { /* Fallback background, overridden by JS or inline style if needed */
+    background-image: url('../images/moses_basket_nile.png'); 
+}
+
+.card-content {
+    padding: 2rem;
+    text-align: center;
+}
+
+.card-content h2 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--gold);
+}
+
+.card-content p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+/* Story Slider View */
+#story-view {
+    padding: 0;
+}
+
+.slider-container {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.slide-image {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    transition: background-image 1s ease-in-out;
+}
+
+/* Gradient overlay to make text readable */
+.slider-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 60%, transparent 100%);
+    z-index: 0;
+}
+
+.slide-content {
+    position: relative;
+    z-index: 1;
+    padding: 3rem;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.slide-text {
+    font-size: 1.8rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    min-height: 80px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.controls .hidden {
+    display: none;
+}
+
+.progress-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    transition: background 0.3s ease;
+}
+
+.dot.active {
+    background: var(--gold);
+    box-shadow: 0 0 10px var(--gold);
+}
+
+/* Verses View */
+.verses-container {
+    max-width: 800px;
+    margin: 4rem auto;
+    background: var(--card-bg);
+    padding: 3rem;
+    border-radius: 20px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    text-align: center;
+}
+
+.surah-title {
+    font-family: var(--font-heading);
+    color: var(--gold);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+}
+
+.quran-text {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    line-height: 2;
+    margin-bottom: 3rem;
+    color: var(--text-primary);
+}
+
+.ayah-symbol {
+    color: var(--gold);
+    font-size: 1.5rem;
+    margin: 0 10px;
+}
+
+.active-ayah {
+    color: var(--gold);
+    transition: color 0.3s ease;
+}
+
+/* Audio Player */
+.audio-player {
+    background: rgba(0,0,0,0.5);
+    border: 1px solid var(--gold-dim);
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+}
+
+.player-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+}
+
+.play-btn {
+    background: var(--gold);
+    color: #000;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    transition: transform 0.2s;
+}
+
+.play-btn:hover {
+    transform: scale(1.1);
+}
+
+.reset-btn {
+    margin-top: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    .hero p { font-size: 1.2rem; }
+    .slide-text { font-size: 1.3rem; }
+    .quran-text { font-size: 1.6rem; }
+    .slide-content { padding: 1.5rem; }
+}
