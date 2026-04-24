@@ -337,9 +337,30 @@ button {
 
 /* Responsive */
 @media (max-width: 768px) {
-    .hero h1 { font-size: 2.5rem; }
-    .hero p { font-size: 1.2rem; }
+    .hero { margin: 2rem 0; }
+    .hero h1 { font-size: 2.2rem; }
+    .hero p { font-size: 1.1rem; }
     .slide-text { font-size: 1.3rem; }
     .quran-text { font-size: 1.6rem; }
-    .slide-content { padding: 1.5rem; }
+    .slide-content { padding: 1rem; width: 100%; }
+    .view { padding: 1rem; }
+    
+    .categories { 
+        gap: 1rem; 
+        padding: 0 0.5rem;
+    }
+    .category-card { 
+        width: 100%; 
+        max-width: 100%;
+    }
+    
+    .verses-container { 
+        padding: 1.5rem; 
+        margin: 2rem 1rem; 
+    }
+    .surah-title { font-size: 2rem; }
+    
+    .controls { flex-direction: column; gap: 0.8rem; }
+    .nav-btn { width: 100%; }
+    .close-btn { top: 1rem; right: 1rem; padding: 0.4rem 0.8rem; font-size: 0.9rem; }
 }
